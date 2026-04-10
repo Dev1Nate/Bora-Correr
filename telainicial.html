@@ -3,9 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Inicio =</title>
+    <link rel=”stylesheet” href=style.css”>
+    <style>
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 16px;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.4s ease;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.85);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 22px;
+            cursor: pointer;
+            z-index: 10;
+            transition: background 0.2s;
+        }
+
+        .carousel-btn:hover {
+            background: white;
+        }
+
+        .btn-prev {
+            left: 12px;
+        }
+
+        .btn-next {
+            right: 12px;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ccc;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .dot.active {
+            background: #ff5500;
+        }
+    </style>
 </head>
 <body>
+<nav>
+    <img src="./img/BoraCorrer.png" alt="logo">
+    <a href="">HOME</a>
+    <a href="">PARCEIROS</a>
+    <a href="">CONTATOS</a>
+    <a href="">EVENTOS</a>
+    <a href="">ORGANIZADOR</a>
+    <button>Login</button>
+</nav>
+<br>
+
+<div class="carousel-container">
+        <div class="carousel-track" id="carouselTrack">
+            <div class="carousel-slide">
+                <img src="./img/5716a7636c8c6c912b6d4e1ab6d3deb9 (2).jpg" alt="Imagem 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="./img/e8d1dd6bb91d815822c80cceda393b55.jpg" alt="Imagem 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="./img/6195482d6814be7e031dd7cf7cbdc41a.webp" alt="Imagem 3">
+            </div>
+        </div>
+
+        <button class="carousel-btn btn-prev" id="btnPrev">&#8249;</button>
+        <button class="carousel-btn btn-next" id="btnNext">&#8250;</button>
+    </div>
+
+    <div class="carousel-dots" id="carouselDots">
+        <div class="dot active" data-index="0"></div>
+        <div class="dot" data-index="1"></div>
+        <div class="dot" data-index="2"></div>
+    </div>
+
+    <div class="cards-container">
+
+        <div class="card">
+            <div class="card-img">
+                <img src="./img/evento1.jpg" alt="1ª Corrida da Serra">
+                <button class="btn-inscreva">Inscreva - se</button>
+            </div>
+            <div class="card-info">
+                <div class="card-detail">
+                    <span class="icon">📅</span>
+                    <span>09/11/2024</span>
+                </div>
+                <div class="card-detail">
+                    <span class="icon">📍</span>
+                    <span>Teixeira - PB</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-img">
+                <img src="./img/evento2.jpg" alt="Corrida de Matureia">
+                <button class="btn-inscreva">Inscreva - se</button>
+            </div>
+            <div class="card-info">
+                <div class="card-detail">
+                    <span class="icon">📅</span>
+                    <span>14/12/2025</span>
+                </div>
+                <div class="card-detail">
+                    <span class="icon">📍</span>
+                    <span>Matureia - PB</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-img">
+                <img src="./img/evento3.jpg" alt="3ª Corrida da Saúde">
+                <button class="btn-inscreva">Inscreva - se</button>
+            </div>
+            <div class="card-info">
+                <div class="card-detail">
+                    <span class="icon">📅</span>
+                    <span>27/11/2025</span>
+                </div>
+                <div class="card-detail">
+                    <span class="icon">📍</span>
+                    <span>Imaculada - PB</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-img">
+                <img src="./img/evento4.jpg" alt="Inscrições Abertas Juru">
+                <button class="btn-inscreva">Inscreva - se</button>
+            </div>
+            <div class="card-info">
+                <div class="card-detail">
+                    <span class="icon">📅</span>
+                    <span>23/11/2025</span>
+                </div>
+                <div class="card-detail">
+                    <span class="icon">📍</span>
+                    <span>Juru - PB</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-img">
+                <img src="./img/evento5.jpg" alt="1ª Corrida São Miguel Arcano">
+                <button class="btn-inscreva">Inscreva - se</button>
+            </div>
+            <div class="card-info">
+                <div class="card-detail">
+                    <span class="icon">📅</span>
+                    <span>30/11/2025</span>
+                </div>
+                <div class="card-detail">
+                    <span class="icon">📍</span>
+                    <span>Brejinho - PE</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+        const track = document.getElementById('carouselTrack');
+        const dots = document.querySelectorAll('.dot');
+        const total = 3;
+        let current = 0;
+
+        function goTo(index) {
+            current = (index + total) % total;
+            track.style.transform = `translateX(-${current * 100}%)`;
+            dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
+        }
+
+        document.getElementById('btnPrev').addEventListener('click', () => goTo(current - 1));
+        document.getElementById('btnNext').addEventListener('click', () => goTo(current + 1));
+        dots.forEach(dot => dot.addEventListener('click', () => goTo(+dot.dataset.index)));
+    </script>
+
+    
     
 </body>
 </html>
