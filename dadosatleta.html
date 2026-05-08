@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados do Atleta</title>
+    <link rel="stylesheet" href="dadosatleta.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="atleta-container">
+       <header class="topo-formulario">
+
+    <img
+        src="https://i.postimg.cc/7bbxDjHj/BORA-CORRER-PNG.png"
+        alt="Logo Bora Correr"
+        class="logo"
+    >
+
+    <nav class="menu-nav">
+
+        <a href="#">HOME</a>
+        <a href="#">PARCEIROS</a>
+        <a href="#">CONTATOS</a>
+        <a href="#">EVENTOS</a>
+        <a href="#">ORGANIZADOR</a>
+
+    </nav>
+
+    <button class="btn-login">
+        <i class="fa-regular fa-user"></i>
+        Login
+    </button>
+
+</header>
+        <div class="formulario-card">
+            <div class="titulo-formulario">
+                <i class="fa-solid fa-person-running"></i>
+                <h1>Dados do Atleta</h1>
+            </div>
+            <form>
+                <div class="campo campo-full">
+                    <label>Nome Completo</label>
+                    <input type="text" placeholder="Digite seu nome completo">
+                </div>
+                <div class="linha-formulario">
+                    <div class="campo">
+                        <label>E-mail</label>
+                        <input type="email" placeholder="@email.com">
+                    </div>
+                    <div class="campo">
+                        <label>Sexo</label>
+                        <div class="sexo-opcoes">
+                            <label class="radio-item">
+                                <input type="radio" name="sexo">
+                                Feminino
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="sexo">
+                                Masculino
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="linha-formulario">
+                    <div class="campo">
+                        <label>Telefone</label>
+                        <input type="text" placeholder="(83) 99999-9999">
+                    </div>
+                    <div class="campo">
+                        <label>CPF</label>
+                        <input type="text" placeholder="000.000.000-00">
+                    </div>
+                </div>
+                <div class="linha-formulario">
+                    <div class="campo">
+                        <label>Grupo de Corrida</label>
+                        <input type="text" placeholder="Grupo de Corrida">
+                    </div>
+                    <div class="campo">
+                        <label>Tamanho da Camisa</label>
+                        <select>
+                            <option>Selecione</option>
+                            <option>P</option>
+                            <option>M</option>
+                            <option>G</option>
+                            <option>GG</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="linha-formulario">
+                    <div class="campo">
+                        <label>Cidade</label>
+                        <input type="text" placeholder="Cidade">
+                    </div>
+                    <div class="campo">
+                        <label>Estado</label>
+                        <input type="text" placeholder="UF">
+                    </div>
+                </div>
+                <div class="botao-container">
+                    <button type="submit" class="btn-cadastrar">
+                        Cadastrar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
