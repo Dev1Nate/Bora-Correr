@@ -4,176 +4,56 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bora Correr – Organizador</title>
+  
+  <link rel="stylesheet" href="telaorganizador.css">
 </head>
 <body>
 
-
-  <header>
-    <nav>
-      <div>
-        <strong>BORA</strong><br>
-        <strong>CORRER</strong>
+  <header class="main-global-header">
+    <div class="header-inner">
+      <div class="logo-space">
+        <img src="BoraCorrer.png" class="brand-logo" alt="Bora Correr">
       </div>
-      <ul>
-        <li><a href="#">HOME</a></li>
-        <li><a href="#">PARCEIROS</a></li>
-        <li><a href="#">CONTATOS</a></li>
-        <li><a href="#">EVENTOS</a></li>
-        <li><a href="#">ORGANIZADOR</a></li>
-      </ul>
-      <div>
-        <button>👤 José</button>
-      </div>
-    </nav>
+      
+      <nav class="navigation-menu">
+        <ul class="nav-items-list">
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">PARCEIROS</a></li>
+          <li><a href="#">CONTATOS</a></li>
+          <li><a href="#">EVENTOS</a></li>
+          <li><a href="#" class="active">ORGANIZADOR</a></li>
+        </ul>
+        <button class="orange-login-btn">👤 Login</button>
+      </nav>
+    </div>
   </header>
 
-
-  <main>
-
+  <div class="content-wrapper">
     
-    <section>
-      <div>
-
-        <div>
-          <span>📅</span>
-          <h2>Eventos Ativos</h2>
-          <p>02 Eventos em Aberto</p>
-          <button>Ver mais</button>
-        </div>
-
-        <div>
-          <span>☰</span>
-          <h2>Inscrições Hoje</h2>
-          <p>130 novas inscrições</p>
-          <button>Ver mais</button>
-        </div>
-
-        <div>
-          <span>$</span>
-          <h2>Receita Diária</h2>
-          <p>R$ 3.480,00</p>
-          <button>Ver mais</button>
-        </div>
-
-      </div>
-    </section>
-
-  
-    <section>
-
-     
-      <div>
-        <h3>Próximos Eventos</h3>
-        <article>
-          <strong>Corrida do Sol 2025</strong>
-          <p>📅 14/03/2025</p>
-          <p>📍 Patos - PB</p>
-          <p>👥 425 inscritos</p>
-          <button>Gerenciar</button>
-        </article>
-      </div>
-
+    <main class="left-orange-card">
       
-      <div>
-        <h3>Acesso Rápido</h3>
-        <div>
-
-          <div>
-            <button>➕</button>
-            <p>Criar novo evento</p>
-          </div>
-
-          <div>
-            <button>👤</button>
-            <p>Cadastrar Atleta</p>
-          </div>
-
-          <div>
-            <button>👥</button>
-            <p>Cadastrar Parceiros</p>
-          </div>
-
-          <div>
-            <button>📷</button>
-            <p>Upload de Imagens</p>
-          </div>
-
-          <div>
-            <button>🔄</button>
-            <p>Evento em Análise</p>
-          </div>
-
-          <div>
-            <button>📋</button>
-            <p>Atletas Inscritos</p>
-          </div>
-
-          <div>
-            <button>📋</button>
-            <p>Parceiros Inscritos</p>
-          </div>
-
-          <div>
-            <button>🔒</button>
-            <p>Inscrições Reservadas</p>
-          </div>
-
-        </div>
-      </div>
-
-    </section>
-
-   
-    <section>
-
-    
-      <div>
-        <h3>Ultimas Atividades</h3>
-        <ul>
-          <li>
-            <span>V</span>
-            <p>Novo Atleta inscrito no evento "Corrida de emancipação".</p>
-          </li>
-          <li>
-            <span>📤</span>
-            <p>Parceiro "FocoRadical" enviado para aprovação.</p>
-          </li>
-          <li>
-            <span>🖼️</span>
-            <p>Álbum de fotos adicionado ao "Corrida do Mel".</p>
-          </li>
-          <li>
-            <span>R$</span>
-            <p>Pagamento confirmado de R$ 65,00.</p>
-          </li>
-        </ul>
-      </div>
-
-      
-      <div>
-
-       
-        <div>
-          <h3>Inscrições por Dia</h3>
-          <p>[Gráfico de linha – Inscrições por Dia]</p>
-        </div>
-
+      <div class="card-text-side">
+        <h1 class="main-hero-text">
+          Organizar<br>
+          eventos nunca<br>
+          foi tão rápido,<br>
+          fácil e<br>
+          profissional.
+        </h1>
         
-        <div>
-          <h3>Categorias Mais Escolhidas</h3>
-          <ul>
-            <li>🟠 5km</li>
-            <li>🔵 10km</li>
-            <li>🔵 21km</li>
-          </ul>
-          <p>[Gráfico de pizza – Categorias]</p>
+        <div class="hero-action-buttons">
+          <button class="action-btn-white">Cadastra-se Como Organizador</button>
+          <button class="action-btn-dark">Já Tenho Cadastro de Organizador</button>
         </div>
-
       </div>
 
-    </section>
+      <div class="card-image-side">
+        <img src="organizadorpng.png" class="mockup-notebook-img" alt="Painel do Organizador no Notebook">
+      </div>
 
-  </main>
+    </main>
+
+  </div>
 
 </body>
 </html>
