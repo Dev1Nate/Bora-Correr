@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Bora Correr - Finalizar Pagamento</title>
+    <link rel="stylesheet" href="teladepagamento.css
+    ">
+</head>
+<body>
+
+    <header class="topo-pagamento">
+        <div class="logo">
+            <img src="BoraCorrer.png" alt="Bora Correr">
+        </div>
+        <h1 class="titulo-pagina">Finalizar Pagamento</h1>
+    </header>
+
+    <main class="container-checkout">
+        
+        <section class="coluna-form">
+            
+            <div class="card-checkout">
+                <h2 class="subtitulo-checkout">💳 Informações de pagamento</h2>
+                
+                <div class="grupo-campo">
+                    <label>Número do cartão</label>
+                    <input type="text" placeholder="1234 5678 9346 2385">
+                </div>
+                
+                <div class="grupo-campo">
+                    <label>Nome no cartão</label>
+                    <input type="text" placeholder="NOME COMPLETO">
+                </div>
+                
+                <div class="linha-dupla">
+                    <div class="grupo-campo flex-1">
+                        <label>Validade</label>
+                        <input type="text" placeholder="MM/AA">
+                    </div>
+                    <div class="grupo-campo flex-1">
+                        <label>CVV</label>
+                        <input type="text" placeholder="123">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-checkout m-top">
+                <h2 class="subtitulo-checkout">Endereço de cobrança</h2>
+                
+                <div class="grupo-campo">
+                    <label>Endereço</label>
+                    <input type="text" placeholder="Rua, número">
+                </div>
+                
+                <div class="linha-dupla">
+                    <div class="grupo-campo flex-2">
+                        <label>Cidade</label>
+                        <input type="text" placeholder="Cidade">
+                    </div>
+                    <div class="grupo-campo flex-1">
+                        <label>Cep</label>
+                        <input type="text" placeholder="00000-000">
+                    </div>
+                </div>
+                
+                <div class="grupo-campo">
+                    <label>Cupom de Desconto</label>
+                    <input type="text" placeholder="">
+                </div>
+            </div>
+
+        </section>
+
+        <aside class="coluna-resumo">
+            <div class="card-resumo">
+                <h2 class="titulo-resumo">Resumo da inscrição</h2>
+                <h3 class="nome-evento">2º Corrida de emancipação 2025</h3>
+                
+                <p class="info-linha"><span>📅</span> 14 de Dezembro, 2025</p>
+                <p class="info-linha"><span>📍</span> Anfiteatro Vasco da Gama Neto - Mauréia - PB</p>
+                
+                <hr class="divisor">
+
+                <div class="valores">
+                    <div class="linha-valor"><span>Taxa de inscrição</span> <span>R$ 70,00</span></div>
+                    <div class="linha-valor"><span>Taxa de serviço</span> <span>R$ 10,00</span></div>
+                    <div class="linha-valor"><span>impostos (10%)</span> <span>R$ 7,00</span></div>
+                </div>
+
+                <hr class="divisor">
+
+                <div class="linha-total">
+                    <span>Total</span>
+                    <span class="preco-total">R$ 87,00</span>
+                </div>
+
+                <div class="acoes-botoes">
+                    <button class="btn-confirmar">Confirmar Inscrição</button>
+                    <button class="btn-cancelar">Cancelar Inscrição</button>
+                </div>
+            </div>
+        </aside>
+
+    </main>
+
+</body>
+</html>
