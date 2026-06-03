@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bora Correr - Cadastrar Evento</title>
+    <link rel="stylesheet" href="cadastrodeevento.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="family">
+</head>
+<body>
+
+    <div class="page-container">
+
+        <header class="main-header">
+            <div class="logo-area">
+  
+                <img src="boracorrer.png" alt="Bora Correr" class="logo-img">
+                <span class="logo-text-fallback" style="display: none;">BORA CORRER</span>
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="#">HOME</a>
+                <a href="#">PARCEIROS</a>
+                <a href="#">CONTATOS</a>
+                <a href="#">EVENTOS</a>
+                <a href="#">ORGANIZADOR</a>
+            </nav>
+
+            <div class="login-area">
+                <a href="#" class="btn-login">
+           
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    Login
+                </a>
+            </div>
+        </header>
+
+        <div class="page-title-banner">
+            <div class="title-icon">
+           
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="#FF6600"><path d="M13.49 5.42c.41-.07.82-.11 1.24-.11a4.54 4.54 0 0 1 4.41 3.56l.08.38a.5.5 0 0 0 .49.4h1.79a.5.5 0 0 0 .5-.54A6.53 6.53 0 0 0 15.65 3.3a6.47 6.47 0 0 0-3.32.91.5.5 0 0 0 .04.86l1.12.35z"/><circle cx="11" cy="4" r="2" fill="#000"/><path d="M11 7c-.55 0-1 .45-1 1v4.09c0 .27.11.52.29.71l2.5 2.5a1 1 0 0 0 1.42-1.42L12 11.67V8c0-.55-.45-1-1-1z" fill="#000"/></svg>
+            </div>
+            <h1>Cadastrar Evento</h1>
+        </div>
+
+  
+        <form class="event-form">
+            <div class="form-grid">
+                
+            
+                <div class="form-group">
+                    <label for="nome-evento">Nome do Evento</label>
+                    <input type="text" id="nome-evento" placeholder="Nome do Evento">
+                </div>
+
+              
+                <div class="form-group">
+                    <label for="horario-evento">Horário do Evento</label>
+                    <input type="text" id="horario-evento" placeholder="00 : 00">
+                </div>
+
+              
+                <div class="form-group">
+                    <label for="data-evento">Data do Evento</label>
+                    <input type="text" id="data-evento" placeholder="dd/mm/aaaa">
+                </div>
+
+               
+                <div class="form-group">
+                    <label>Telefones para Suporte</label>
+                    <div class="phones-container">
+                        <input type="text" placeholder="(83) 99999-9999">
+                        <input type="text" placeholder="(83) 99999-9999">
+                    </div>
+                </div>
+
+                
+                <div class="form-group">
+                    <label for="endereco-evento">Endereço do Evento</label>
+                    <input type="text" id="endereco-evento" placeholder="Endereço">
+                </div>
+
+                
+                <div class="form-group">
+                    <label for="descricao-evento">Descrição do Evento</label>
+                    <input type="text" id="descricao-evento" placeholder="Descrição do evento em até 300 caracteres">
+                </div>
+
+                
+                <div class="form-group">
+                    <label for="instagram-evento">Instagram ou Site</label>
+                    <input type="text" id="instagram-evento" placeholder="Ex: @Boracorrerpb">
+                </div>
+
+                
+                <div class="form-group">
+                    <label for="upload-evento">Upload do Evento</label>
+                    <div class="file-upload-wrapper">
+                        <button type="button" class="btn-fake-file">Escolher arquivo</button>
+                        <span class="file-name-text">Nenhum arquivo selecionado</span>
+                        <input type="file" id="upload-evento" style="display: none;">
+                    </div>
+                </div>
+
+                
+                <div class="form-group">
+                    <label for="cidade-evento">Cidade</label>
+                    <input type="text" id="cidade-evento" placeholder="Cidade">
+                </div>
+
+               
+                <div class="form-group">
+                    <label for="estado-evento">Estado</label>
+                    <input type="text" id="estado-evento" placeholder="UF">
+                </div>
+
+               
+                <div class="form-group full-width">
+                    <label for="endereco-completo">Endereço Completo (Logradouro, Nº, Complemento, Bairro)</label>
+                    <input type="text" id="endereco-completo" placeholder="Cidade">
+                </div>
+
+            </div>
+
+           
+            <div class="submit-container">
+                <button type="submit" class="btn-submit">Cadastrar</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
