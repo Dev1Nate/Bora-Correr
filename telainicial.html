@@ -3,231 +3,393 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bora Correr </title>
+    <title>Bora Correr</title>
     <link rel="stylesheet" href="telainicial.css">
-    <style>
-        .carousel-container {
-            position: relative;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            overflow: hidden;
-            border-radius: 16px;
-        }
-
-        .carousel-track {
-            display: flex;
-            transition: transform 0.4s ease;
-        }
-
-        .carousel-slide {
-            min-width: 100%;
-        }
-
-        .carousel-slide img {
-            width: 100%;
-            height: 450px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            font-size: 22px;
-            cursor: pointer;
-            z-index: 10;
-            transition: background 0.2s;
-        }
-
-        .carousel-btn:hover {
-            background: transparent;
-        }
-
-        .btn-prev {
-            left: 12px;
-        }
-
-        .btn-next {
-            right: 12px;
-        }
-
-        .carousel-dots {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 12px;
-        }
-
-        .dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #ccc;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .dot.active {
-            background: #ff5500;
-        }
-    </style>
 </head>
 <body>
-<nav>
+
+<!-- ========== NAVBAR ========== -->
+<nav id="navbar">
     <a href="telainicial.html">
-    <img src="https://i.postimg.cc/7bbxDjHj/BORA-CORRER-PNG.png" alt="logo">
-</a>
+        <img src="https://i.postimg.cc/7bbxDjHj/BORA-CORRER-PNG.png" alt="logo">
+    </a>
+
     <div class="menu">
-        <a href="telainicial.html">HOME</a>
-        <a href="">PARCEIROS</a>
-        <a href="">CONTATOS</a>
-        <a href="">EVENTOS</a>
-        <a href="">ORGANIZADOR</a>
+        <a href="telainicial.html" class="nav-link active">HOME</a>
+        <a href="#secao-parceiros" class="nav-link">PARCEIROS</a>
+        <a href="#secao-contato" class="nav-link">CONTATOS</a>
+        <a href="#secao-eventos" class="nav-link">EVENTOS</a>
+        <a href="telaorganizador.html" class="nav-link">ORGANIZADOR</a>
+    </div>
+
+    <!-- Barra de busca -->
+    <div class="busca-wrapper">
+        <input
+            type="text"
+            id="campoBusca"
+            class="input-busca"
+            placeholder="🔍 Buscar eventos..."
+            autocomplete="off"
+        >
     </div>
 
     <a href="login.html">
-        <button>Login</button>
+        <button id="btnLogin">Login</button>
     </a>
 </nav>
-<br>
 
+<!-- ========== TOAST DE NOTIFICAÇÃO ========== -->
+<div id="toast" class="toast" aria-live="polite"></div>
+
+<!-- ========== CARROSSEL ========== -->
 <div class="carousel-container">
-        <div class="carousel-track" id="carouselTrack">
-            <div class="carousel-slide">
-                <img src="https://img.freepik.com/fotos-gratis/tiro-medio-de-pessoas-correndo-juntas_23-2149037629.jpg" alt="Imagem 1">
-            </div>
-            <div class="carousel-slide">
-                <img src="https://soubh.uai.com.br/wp-content/uploads/2025/08/WhatsApp-Image-2023-04-20-at-16.17.32.jpeg" alt="Imagem 2">
-            </div>
-            <div class="carousel-slide">
-                <img src="https://esportegoiano.com.br/wp-content/uploads/2022/11/circuito-anapolino-de-corrida-de-rua.jpg" alt="Imagem 3">
+    <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-slide">
+            <img src="https://img.freepik.com/fotos-gratis/tiro-medio-de-pessoas-correndo-juntas_23-2149037629.jpg" alt="Pessoas correndo juntas">
+            <div class="slide-legenda">
+                <h2>Corra com a gente!</h2>
+                <p>Encontre os melhores eventos de corrida da região</p>
             </div>
         </div>
-
-        <button class="carousel-btn btn-prev" id="btnPrev">&#8249;</button>
-        <button class="carousel-btn btn-next" id="btnNext">&#8250;</button>
+        <div class="carousel-slide">
+            <img src="https://soubh.uai.com.br/wp-content/uploads/2025/08/WhatsApp-Image-2023-04-20-at-16.17.32.jpeg" alt="Corrida urbana">
+            <div class="slide-legenda">
+                <h2>Eventos para todos os níveis</h2>
+                <p>Do iniciante ao atleta profissional</p>
+            </div>
+        </div>
+        <div class="carousel-slide">
+            <img src="https://esportegoiano.com.br/wp-content/uploads/2022/11/circuito-anapolino-de-corrida-de-rua.jpg" alt="Circuito de corrida de rua">
+            <div class="slide-legenda">
+                <h2>Inscreva-se agora</h2>
+                <p>Vagas limitadas — garanta a sua!</p>
+            </div>
+        </div>
     </div>
 
-    <div class="carousel-dots" id="carouselDots">
-        <div class="dot active" data-index="0"></div>
-        <div class="dot" data-index="1"></div>
-        <div class="dot" data-index="2"></div>
+    <button class="carousel-btn btn-prev" id="btnPrev" aria-label="Slide anterior">&#8249;</button>
+    <button class="carousel-btn btn-next" id="btnNext" aria-label="Próximo slide">&#8250;</button>
+</div>
+
+<div class="carousel-dots" id="carouselDots">
+    <div class="dot active" data-index="0"></div>
+    <div class="dot" data-index="1"></div>
+    <div class="dot" data-index="2"></div>
+</div>
+
+<!-- ========== FILTROS ========== -->
+<section id="secao-eventos" class="filtros-wrapper">
+    <h2 class="secao-titulo">Próximos Eventos</h2>
+
+    <div class="filtros-bar">
+        <button class="filtro-btn active" data-estado="todos">Todos</button>
+        <button class="filtro-btn" data-estado="PB">Paraíba</button>
+        <button class="filtro-btn" data-estado="PE">Pernambuco</button>
+        <button class="filtro-btn" data-estado="outros">Outros estados</button>
     </div>
 
-    <div class="cards-container">
+    <p id="resultadoContagem" class="resultado-contagem"></p>
+</section>
 
-        <div class="card">
-            <div class="card-img">
-                <img src="https://i.postimg.cc/ZKGy5L3h/Captura-de-tela-2026-04-10-131151.png" alt="1ª Corrida da Serra">
-                <button class="btn-inscreva">Inscreva - se</button>
-            </div>
-            <div class="card-info">
-                <div class="card-detail">
-                    <span class="icon">📅</span>
-                    <span>09/11/2024</span>
-                </div>
-                <div class="card-detail">
-                    <span class="icon">📍</span>
-                    <span>Teixeira - PB</span>
-                </div>
-            </div>
+<!-- ========== CARDS DE EVENTOS ========== -->
+<div class="cards-container" id="cardsContainer">
+
+    <div class="card" data-estado="PB" data-nome="1ª Corrida da Serra" data-cidade="Teixeira">
+        <div class="card-img">
+            <img src="https://i.postimg.cc/ZKGy5L3h/Captura-de-tela-2026-04-10-131151.png" alt="1ª Corrida da Serra">
+            <button class="btn-inscreva" data-evento="1ª Corrida da Serra" data-link="telainscricao.html">Inscreva-se</button>
         </div>
-
-        <div class="card">
-            <div class="card-img">
-                <img src="https://i.postimg.cc/2bmkF5nq/Captura-de-tela-2026-04-10-131303.png" alt="Corrida de Matureia">
-                <button class="btn-inscreva">Inscreva - se</button>
-            </div>
-            <div class="card-info">
-                <div class="card-detail">
-                    <span class="icon">📅</span>
-                    <span>14/12/2025</span>
-                </div>
-                <div class="card-detail">
-                    <span class="icon">📍</span>
-                    <span>Matureia - PB</span>
-                </div>
-            </div>
+        <div class="card-info">
+            <p class="card-nome">1ª Corrida da Serra</p>
+            <div class="card-detail"><span class="icon">📅</span><span>09/11/2024</span></div>
+            <div class="card-detail"><span class="icon">📍</span><span>Teixeira - PB</span></div>
         </div>
-
-        <div class="card">
-            <div class="card-img">
-                <img src="https://i.postimg.cc/rd4sNbbZ/Captura-de-tela-2026-04-10-131402.png" alt="3ª Corrida da Saúde">
-                <button class="btn-inscreva">Inscreva - se</button>
-            </div>
-            <div class="card-info">
-                <div class="card-detail">
-                    <span class="icon">📅</span>
-                    <span>27/11/2025</span>
-                </div>
-                <div class="card-detail">
-                    <span class="icon">📍</span>
-                    <span>Imaculada - PB</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-img">
-                <img src="https://i.postimg.cc/rRsLQRs2/Captura-de-tela-2026-04-10-131507.png" alt="Inscrições Abertas Juru">
-                <button class="btn-inscreva">Inscreva - se</button>
-            </div>
-            <div class="card-info">
-                <div class="card-detail">
-                    <span class="icon">📅</span>
-                    <span>23/11/2025</span>
-                </div>
-                <div class="card-detail">
-                    <span class="icon">📍</span>
-                    <span>Juru - PB</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-img">
-                <img src="https://i.postimg.cc/CRyWfQjQ/Captura-de-tela-2026-04-10-132209-(2).png" alt="1ª Corrida São Miguel Arcano">
-                <button class="btn-inscreva">Inscreva - se</button>
-            </div>
-            <div class="card-info">
-                <div class="card-detail">
-                    <span class="icon">📅</span>
-                    <span>30/11/2025</span>
-                </div>
-                <div class="card-detail">
-                    <span class="icon">📍</span>
-                    <span>Brejinho - PE</span>
-                </div>
-            </div>
-        </div>
-
     </div>
 
+    <div class="card" data-estado="PB" data-nome="Corrida de Matureia" data-cidade="Matureia">
+        <div class="card-img">
+            <img src="https://i.postimg.cc/2bmkF5nq/Captura-de-tela-2026-04-10-131303.png" alt="Corrida de Matureia">
+            <button class="btn-inscreva" data-evento="Corrida de Matureia" data-link="telainscricao.html">Inscreva-se</button>
+        </div>
+        <div class="card-info">
+            <p class="card-nome">Corrida de Matureia</p>
+            <div class="card-detail"><span class="icon">📅</span><span>14/12/2025</span></div>
+            <div class="card-detail"><span class="icon">📍</span><span>Matureia - PB</span></div>
+        </div>
+    </div>
 
-    <script>
-        const track = document.getElementById('carouselTrack');
-        const dots = document.querySelectorAll('.dot');
-        const total = 3;
-        let current = 0;
+    <div class="card" data-estado="PB" data-nome="3ª Corrida da Saúde" data-cidade="Imaculada">
+        <div class="card-img">
+            <img src="https://i.postimg.cc/rd4sNbbZ/Captura-de-tela-2026-04-10-131402.png" alt="3ª Corrida da Saúde">
+            <button class="btn-inscreva" data-evento="3ª Corrida da Saúde" data-link="telainscricao.html">Inscreva-se</button>
+        </div>
+        <div class="card-info">
+            <p class="card-nome">3ª Corrida da Saúde</p>
+            <div class="card-detail"><span class="icon">📅</span><span>27/11/2025</span></div>
+            <div class="card-detail"><span class="icon">📍</span><span>Imaculada - PB</span></div>
+        </div>
+    </div>
 
-        function goTo(index) {
-            current = (index + total) % total;
-            track.style.transform = `translateX(-${current * 100}%)`;
-            dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
+    <div class="card" data-estado="PB" data-nome="Corrida de Juru" data-cidade="Juru">
+        <div class="card-img">
+            <img src="https://i.postimg.cc/rRsLQRs2/Captura-de-tela-2026-04-10-131507.png" alt="Inscrições Abertas Juru">
+            <button class="btn-inscreva" data-evento="Corrida de Juru" data-link="telainscricao.html">Inscreva-se</button>
+        </div>
+        <div class="card-info">
+            <p class="card-nome">Corrida de Juru</p>
+            <div class="card-detail"><span class="icon">📅</span><span>23/11/2025</span></div>
+            <div class="card-detail"><span class="icon">📍</span><span>Juru - PB</span></div>
+        </div>
+    </div>
+
+    <div class="card" data-estado="PE" data-nome="1ª Corrida São Miguel Arcanjo" data-cidade="Brejinho">
+        <div class="card-img">
+            <img src="https://i.postimg.cc/CRyWfQjQ/Captura-de-tela-2026-04-10-132209-(2).png" alt="1ª Corrida São Miguel Arcanjo">
+            <button class="btn-inscreva" data-evento="1ª Corrida São Miguel Arcanjo" data-link="telainscricao.html">Inscreva-se</button>
+        </div>
+        <div class="card-info">
+            <p class="card-nome">1ª Corrida São Miguel Arcanjo</p>
+            <div class="card-detail"><span class="icon">📅</span><span>30/11/2025</span></div>
+            <div class="card-detail"><span class="icon">📍</span><span>Brejinho - PE</span></div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Mensagem de nenhum resultado -->
+<p id="semResultados" class="sem-resultados" style="display:none;">
+    Nenhum evento encontrado. Tente outro filtro ou termo de busca.
+</p>
+
+<!-- ========== RODAPÉ ========== -->
+<footer id="secao-contato" class="rodape">
+    <div class="rodape-inner">
+        <div id="secao-parceiros" class="rodape-col">
+            <h3>Parceiros</h3>
+            <p>Quer divulgar sua marca nos nossos eventos?</p>
+            <a href="dadosparceiro.html" class="link-rodape">Seja um parceiro →</a>
+        </div>
+        <div class="rodape-col">
+            <h3>Contato</h3>
+            <p>📧 boracorrer@email.com</p>
+            <p>📱 (83) 99999-0000</p>
+        </div>
+        <div class="rodape-col">
+            <h3>Organizadores</h3>
+            <p>Cadastre e gerencie seus eventos facilmente.</p>
+            <a href="telaorganizador.html" class="link-rodape">Área do organizador →</a>
+        </div>
+    </div>
+    <p class="rodape-copy">© 2025 Bora Correr. Todos os direitos reservados.</p>
+</footer>
+
+<!-- js  -->
+<script>
+
+    /* ── 1. CARROSSEL ─────────────────────────────────────── */
+    (function iniciarCarrossel() {
+        const track  = document.getElementById('carouselTrack');
+        const dots   = document.querySelectorAll('.dot');
+        const total  = 3;
+        let   atual  = 0;
+        let   timer  = null;
+
+        // Manipulação do DOM: move o track via transform
+        function irPara(index) {
+            atual = (index + total) % total;
+            track.style.transform = `translateX(-${atual * 100}%)`;
+
+            // Eventos nos dots: toggle de classe 'active'
+            dots.forEach(function(dot, i) {
+                dot.classList.toggle('active', i === atual);
+            });
         }
 
-        document.getElementById('btnPrev').addEventListener('click', () => goTo(current - 1));
-        document.getElementById('btnNext').addEventListener('click', () => goTo(current + 1));
-        dots.forEach(dot => dot.addEventListener('click', () => goTo(+dot.dataset.index)));
-    </script>
+        // Função de autoplay
+        function iniciarAutoplay() {
+            timer = setInterval(function() {
+                irPara(atual + 1);
+            }, 4000);
+        }
 
-    
-    
+        function pararAutoplay() {
+            clearInterval(timer);
+        }
+
+        // Eventos: clique nos botões prev/next
+        document.getElementById('btnPrev').addEventListener('click', function() {
+            pararAutoplay();
+            irPara(atual - 1);
+            iniciarAutoplay();
+        });
+
+        document.getElementById('btnNext').addEventListener('click', function() {
+            pararAutoplay();
+            irPara(atual + 1);
+            iniciarAutoplay();
+        });
+
+        // Eventos: clique nos dots
+        dots.forEach(function(dot) {
+            dot.addEventListener('click', function() {
+                pararAutoplay();
+                irPara(Number(dot.dataset.index));
+                iniciarAutoplay();
+            });
+        });
+
+        // Evento: teclado (acessibilidade)
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft')  irPara(atual - 1);
+            if (e.key === 'ArrowRight') irPara(atual + 1);
+        });
+
+        iniciarAutoplay();
+    })();
+
+
+    /* NAVBAR*/
+    (function navbarScroll() {
+        var navbar = document.getElementById('navbar');
+
+        // Evento: scroll da página
+        window.addEventListener('scroll', function() {
+            // Manipulação do DOM: adiciona/remove classe conforme posição
+            if (window.scrollY > 10) {
+                navbar.classList.add('nav-scrolled');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+            }
+        });
+    })();
+
+
+    /* TOAST*/
+    function mostrarToast(mensagem, tipo) {
+        var toast = document.getElementById('toast');
+        toast.textContent = mensagem;
+        toast.className   = 'toast toast-' + (tipo || 'info') + ' toast-visivel';
+
+        // DOOM
+        setTimeout(function() {
+            toast.className = 'toast';
+        }, 3000);
+    }
+
+
+    /*FILTRO DE EVENTOS  */
+    (function iniciarFiltros() {
+        var cards        = Array.from(document.querySelectorAll('.card'));
+        var botoesFltr   = document.querySelectorAll('.filtro-btn');
+        var semResultados = document.getElementById('semResultados');
+        var contagem     = document.getElementById('resultadoContagem');
+        var campoBusca   = document.getElementById('campoBusca');
+
+        var filtroAtual  = 'todos';
+        var buscaAtual   = '';
+
+        // aplica filtro busca juntos
+        function aplicarFiltros() {
+            var visiveis = 0;
+
+            cards.forEach(function(card) {
+                var estado = card.dataset.estado;
+                var nome   = card.dataset.nome.toLowerCase();
+                var cidade = card.dataset.cidade.toLowerCase();
+                var busca  = buscaAtual.toLowerCase();
+
+                //  filtro por estado
+                var passaFiltro =
+                    filtroAtual === 'todos' ||
+                    estado === filtroAtual  ||
+                    (filtroAtual === 'outros' && estado !== 'PB' && estado !== 'PE');
+
+                //busca por nome ou cidade
+                var passaBusca =
+                    busca === '' ||
+                    nome.includes(busca)   ||
+                    cidade.includes(busca);
+
+                //DOOM: mostra ou oculta o card
+                if (passaFiltro && passaBusca) {
+                    card.style.display = '';
+                    card.classList.add('card-visivel');
+                    visiveis++;
+                } else {
+                    card.style.display = 'none';
+                    card.classList.remove('card-visivel');
+                }
+            });
+
+            // Atualiza contagem no DOOM
+            contagem.textContent = visiveis + (visiveis === 1 ? ' evento encontrado' : ' eventos encontrados');
+            semResultados.style.display = visiveis === 0 ? 'block' : 'none';
+        }
+
+        // Eventos: clique nos botões de filtro
+        botoesFltr.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                // Remove 'active' de todos, adiciona no clicado
+                botoesFltr.forEach(function(b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+
+                filtroAtual = btn.dataset.estado;
+                aplicarFiltros();
+            });
+        });
+
+        // digitação na barra de busca 
+        var debounceTimer = null;
+        campoBusca.addEventListener('input', function() {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(function() {
+                buscaAtual = campoBusca.value;
+                aplicarFiltros();
+            }, 250);
+        });
+
+        // Roda ao carregar para mostrar a contagem inicial
+        aplicarFiltros();
+    })();
+
+
+    /* ── 5. BOTÕES "INSCREVA-SE" ──────────────────────────── */
+    (function iniciarInscricao() {
+        var botoesInscreva = document.querySelectorAll('.btn-inscreva');
+
+        botoesInscreva.forEach(function(btn) {
+            // Evento: clique no botão de inscrição
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                var nomeEvento = btn.dataset.evento;
+                var link       = btn.dataset.link;
+
+                mostrarToast('Redirecionando para: ' + nomeEvento, 'sucesso');
+
+                // Navega após pequeno delay para o usuário ver o toast
+                setTimeout(function() {
+                    window.location.href = link;
+                }, 900);
+            });
+        });
+    })();
+
+
+    /* LINKS DE ANCORAGEM SUAVE  */
+    (function scrollSuave() {
+        document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                var alvo = document.querySelector(link.getAttribute('href'));
+                if (alvo) {
+                    e.preventDefault();
+                    // Manipulação do DOM: scroll suave via scrollIntoView
+                    alvo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    })();
+
+</script>
+
 </body>
 </html>
